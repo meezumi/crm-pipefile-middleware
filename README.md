@@ -39,7 +39,7 @@ PORT=3000
 ZOHO_CLIENT_ID=your_zoho_client_id
 ZOHO_CLIENT_SECRET=your_zoho_client_secret
 ZOHO_REFRESH_TOKEN=your_zoho_refresh_token
-ZOHO_API_DOMAIN=https://www.zohoapis.com
+ZOHO_API_DOMAIN=https://www.zohoapis.in
 
 # Which Zoho module to create records in
 ZOHO_MODULE=Leads
@@ -49,7 +49,7 @@ ZOHO_MODULE=Leads
 
 #### Step 1: Create Zoho OAuth App
 
-1. Go to [Zoho API Console](https://api-console.zoho.com/)
+1. Go to [Zoho API Console](https://api-console.zoho.in/)
 2. Click **Add Client** → **Server-based Applications**
 3. Fill in:
    - **Client Name**: Pipefile Integration
@@ -63,7 +63,7 @@ ZOHO_MODULE=Leads
 Visit this URL in your browser (replace `CLIENT_ID` and `REDIRECT_URI`):
 
 ```
-https://accounts.zoho.com/oauth/v2/auth?scope=ZohoCRM.modules.ALL&client_id=YOUR_CLIENT_ID&response_type=code&access_type=offline&redirect_uri=http://localhost:3000/callback
+https://accounts.zoho.in/oauth/v2/auth?scope=ZohoCRM.modules.ALL&client_id=YOUR_CLIENT_ID&response_type=code&access_type=offline&redirect_uri=http://localhost:3000/callback
 ```
 
 After authorizing, you'll be redirected to a URL with a `code` parameter. Copy this code.
@@ -71,7 +71,7 @@ After authorizing, you'll be redirected to a URL with a `code` parameter. Copy t
 Then run this command (replace values):
 
 ```bash
-curl -X POST https://accounts.zoho.com/oauth/v2/token \
+curl -X POST https://accounts.zoho.in/oauth/v2/token \
   -d "code=YOUR_CODE" \
   -d "client_id=YOUR_CLIENT_ID" \
   -d "client_secret=YOUR_CLIENT_SECRET" \
